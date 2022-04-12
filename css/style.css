@@ -135,9 +135,11 @@ h1 {
 .container {
   max-width: 73rem;
   margin: 0 auto;
+ 
 }
 
 .collection {
+  background-color: #363741;
   color: #fff;
 }
 .collection .collection__heading {

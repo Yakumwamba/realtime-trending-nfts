@@ -39,25 +39,25 @@ if (offset == 0) {
   fetchNFTs(0);
 }
 console.log("Loaded this script great");
-var myChart = echarts.init(document.getElementById('main'));
+//var myChart = echarts.init(document.getElementById('main'));
 function fetchNFTs(offset) {
   fetch("https://api.hypereveal.xyz/v1/collections?limit=5&offset=" + offset)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.collections);
 
-      myChart.setOption({
-        xAxis: {
-          data: data.collections
-        },
-        series: [
-          {
-            // Find series by name
-            name: 'rank',
-            data: data.rank
-          }
-        ]
-      });
+      // myChart.setOption({
+      //   xAxis: {
+      //     data: data.collections
+      //   },
+      //   series: [
+      //     {
+      //       // Find series by name
+      //       name: 'rank',
+      //       data: data.rank
+      //     }
+      //   ]
+      // });
 
 
 document.getElementById("nft-list").innerHTML = "";
