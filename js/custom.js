@@ -41,26 +41,15 @@ if (offset == 0) {
 console.log("Loaded this script great");
 //var myChart = echarts.init(document.getElementById('main'));
 function fetchNFTs(offset) {
-  fetch("https://api.hypereveal.xyz/v1/collections?limit=5&offset=" + offset)
+  fetch("https://api.hypereveal.xyz/v1/collections?sort=domain_authority&limit=5&offset=" + offset)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.collections);
-
-      // myChart.setOption({
-      //   xAxis: {
-      //     data: data.collections
-      //   },
-      //   series: [
-      //     {
-      //       // Find series by name
-      //       name: 'rank',
-      //       data: data.rank
-      //     }
-      //   ]
-      // });
-
-
+// document.getElementById("nft-list").innerHTML = "";
+const tableHead = document.getElementById("nft-list").children[0]
+console.log("the first ", tableHead);
 document.getElementById("nft-list").innerHTML = "";
+document.getElementById("nft-list").appendChild(tableHead)
       data.collections.forEach((element) => {
         newNFTRow(element)
       });
