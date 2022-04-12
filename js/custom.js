@@ -41,7 +41,7 @@ if (offset == 0) {
 console.log("Loaded this script great");
 
 function fetchNFTs(offset) {
-  fetch("https://api.hypereveal.xyz/v1/collections?sort=domain_authority&limit=5&offset=" + offset)
+  fetch("https://api.hypereveal.xyz/v1/collections?sort=domain_authority&limit=10&offset=" + offset)
     .then((response) => response.json())
     .then((data) => {
       console.log(data.collections);
